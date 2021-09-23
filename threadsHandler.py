@@ -24,7 +24,6 @@ class threadsHandler():
     
     def runHoldAction(self, actionFunc, buttonName):
         self.buttonHeld[buttonName] = True
-        print('holding')
         thread = self.createNewHoldThread(actionFunc)
         self.holdThreads[buttonName] = thread
         thread.start()
@@ -32,6 +31,5 @@ class threadsHandler():
     def runReleaseAction(self, actionFunc, buttonName):
         self.buttonHeld[buttonName] = False
         self.holdThreads[buttonName].stopLoop()
-        print('released')
         thread = self.createNewThread(actionFunc)
         thread.start()

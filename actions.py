@@ -58,9 +58,8 @@ class button13Actions(buttonActions): # Up thumb button
         pass
     
     def hold(self):
-        # print('holdthumb')
         self.mouseController.press(MouseButton.left)
-        time.sleep(0.012)
+        time.sleep(0.01)
         self.mouseController.release(MouseButton.left)
 
     def release(self):
@@ -74,10 +73,12 @@ class button14Actions(buttonActions): # Down thumb button
         pass
     
     def hold(self):
-        pass
+        self.mouseController.press(MouseButton.right)
+        time.sleep(0.01)
+        self.mouseController.release(MouseButton.right)
 
     def release(self):
-        pass
+        self.mouseController.release(MouseButton.right)
 
 class button15Actions(buttonActions): # Little middle button
     def __init__(self, mouseController, kBController):
