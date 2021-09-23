@@ -18,11 +18,6 @@ class threadsHandler():
         _holdingThread = holdingThread(actionFunc)
         return _holdingThread
 
-    # def holdFunc(self, actionFunc, loopConditionFunc, buttonName):
-    #     while(loopConditionFunc(None)):
-    #         # print('holding!')
-    #         actionFunc()
-
     def runPressAction(self, actionFunc):
         thread = self.createNewThread(actionFunc)
         thread.start()
